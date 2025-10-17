@@ -40,3 +40,60 @@
 .read-the-docs {
   color: #888;
 }
+
+.home {
+  display: flex;
+
+  gap: 9rem;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.photo-box {
+  width: 220px;
+  height: 320px;
+  background: #b0acac;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.text-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+}
+
+.dev-title {
+  font-size: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.light {
+  color: #222;
+}
+
+.dark {
+  background-color: #2b2b32;
+  color: white;
+  padding: 0.2em 0.5em;
+}
+
+.description {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.name {
+  margin-top: 2.5rem;
+  font-size: 2.8rem;
+  font-weight: 500;
+}

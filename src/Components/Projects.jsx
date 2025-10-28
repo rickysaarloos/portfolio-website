@@ -3,7 +3,7 @@ const project = [
     id: 1,
     name: "Project One",
     description: "This is the first project.",
-    image: "Screenshot_2025-10-07_151352.png",
+    image: "https://via.placeholder.com/150",
     },
 
     {

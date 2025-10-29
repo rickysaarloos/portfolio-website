@@ -1,10 +1,10 @@
 import './App.css';
-import About from './Pages/About';
-import Navigation from './Pages/Navigation';
-import Home from './Pages/Home';
+import About from './pages/About';
+import Navigation from './pages/Navigation';
+import Home from './pages/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Contact from './Pages/Contact';
-import Discover from './Pages/discover';
+import Contact from './pages/Contact';
+import Discover from './pages/Discover';
 
 function App() {
     return (

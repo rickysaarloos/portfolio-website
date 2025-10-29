@@ -1,19 +1,45 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* ========== ROOT STYLES ========== */
+:root {
+  --primary: #a06224;
+  --primary-dark: #804b1c;
+  --accent: #e0c48c;
+  --text-dark: #2b2b32;
+  --bg-light: #fffdf5;
+  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 5px 10px rgba(0, 0, 0, 0.2);
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
 }
 
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #222;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  text-align: center;
+  padding: var(--space-md);
+  box-sizing: border-box;
+}
+
+/* ========== LOGO ========== */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
-  transition: filter 300ms;
+  transition: filter 0.3s ease;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -33,23 +59,16 @@
   }
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
+/* ========== HOME SECTION ========== */
 .home {
   display: flex;
-
   gap: 9rem;
-  padding: 4rem 2rem;
+  padding: var(--space-lg) var(--space-md);
   min-height: 100vh;
   max-width: 1200px;
   margin: 0 auto;
 }
+
 .photo-box {
   width: 220px;
   height: 320px;
@@ -59,7 +78,7 @@
   justify-content: center;
   font-size: 1.2rem;
   color: #333;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-sm);
 }
 
 .text-area {
@@ -81,7 +100,7 @@
 }
 
 .dark {
-  background-color: #2b2b32;
+  background-color: var(--text-dark);
   color: white;
   padding: 0.2em 0.5em;
 }
@@ -96,4 +115,186 @@
   margin-top: 2.5rem;
   font-size: 2.8rem;
   font-weight: 500;
+}
+
+/* ========== PROJECT CARDS ========== */
+
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+/* 🃏 Individuele kaart */
+.card {
+  background-color: #fffdf5;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card h2 {
+  margin: 0.8rem 1rem 0.3rem;
+  font-size: 1.1rem;
+  color: #5b3810;
+  font-weight: bold;
+}
+
+.card p {
+  margin: 0 1rem 1rem;
+  font-size: 0.9rem;
+  color: #6b4b18;
+}
+
+
+/* ========== DETAIL PAGE ========== */
+.detail-page {
+  background-color: var(--bg-light);
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.detail-page img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.detail-page h1 {
+  font-size: 1.8rem;
+  color: #7b4a0b;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.detail-page p {
+  color: #4b2e05;
+  font-size: 1rem;
+  margin: 0.4rem 0;
+}
+
+.detail-page strong {
+  color: #7b4a0b;
+}
+
+/* Terug-knop */
+.detail-page a {
+  display: inline-block;
+  margin-top: 1.2rem;
+  background-color: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.detail-page a:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* ========== CONTACT PAGE ========== */
+.contact-container {
+  background-color: #e5e5e5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-container h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.contact-form {
+  background-color: #cfcfcf;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 0.75rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  resize: none;
+}
+
+.contact-form button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.contact-form button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 800px) {
+  .home {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .text-area {
+    max-width: 90%;
+  }
+
+  .name {
+    font-size: 2.2rem;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .detail-page {
+    margin: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .contact-form {
+    width: 90%;
+  }
 }

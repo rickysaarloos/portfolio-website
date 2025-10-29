@@ -5,15 +5,15 @@ function ProjectCard({ project }) {
 
   const handleClick = () => {
     navigate(`/projects/${project.id}`);
-  }
+  };
 
-    return (
-        <div className ="card" onClick={() => navigate(`/projects/${project.id}`)}>
-            <h2>{name}</h2>
-            <img src={image} alt={name} />
-            <p>{description}</p>
-        </div>
-    );
+  return (
+    <div className="card" onClick={handleClick}>
+      <h2>{project.name}</h2>
+      <img src={project.image} alt={project.name} />
+      <p>{project.description}</p>
+    </div>
+  );
 }
 
 export default ProjectCard;

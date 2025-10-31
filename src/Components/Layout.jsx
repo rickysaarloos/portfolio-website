@@ -1,11 +1,16 @@
-import "./Layout.css"
+import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
+import "../App.css";
 
-function Layout({ children }) {
+const Layout = ({ children }) => {
   return (
-    <main className="layout">
-      {children}
-    </main>
-  )
-}
+    <div className="page-container">
+      <Header />
+      <main className="content">{children}</main>
+      <Footer />
+    </div>
+  );
+};
 
-export default Layout
+export default Layout;

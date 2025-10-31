@@ -1,9 +1,11 @@
 import ProjectCard from "../components/projectCard";
 import projects from "../components/Projects";
+import Layout from "../components/Layout";
 import '../App.css';
 
 function Discover() {
   return (
+    <Layout>
     <div className="discover-page">
       <h2 className="text-2xl font-bold mb-2">Discover Page</h2>
       <p>Checkout my work</p>
@@ -15,6 +17,7 @@ function Discover() {
         ))}
       </div>
     </div>
+    </Layout>
   );
 }
 

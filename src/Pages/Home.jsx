@@ -1,42 +1,28 @@
-import '../App.css';
-import Header from '../components/Header';
-import Layout from '../components/Layout';
-
-
-
+import React from "react";
+import Layout from "../components/Layout";
+import "../App.css";
 
 function Home() {
-    return (
-
+  return (
+    <Layout>
       <main className="home">
-   
-      <div className="photo-box">foto</div>
-
-      <div className="text-area">
-        <div className="dev-section">
-          <h2 className="dev-title">
-            <span className="light">software</span>{" "}
-            <span className="dark">developer</span>
-          </h2>
-          <p className="description">
-            Frontend developer met passie voor design, UX en moderne
-            webtechnologieën.
-          </p>
+        <div className="photo-box"><img src="/images/IMG_6842.jpg" alt="Ricky" /></div>
+        <div className="text-area">
+          <div className="dev-section">
+            <h2 className="dev-title">
+              <span className="light">software</span>{" "}
+              <span className="dark">developer</span>
+            </h2>
+            <p className="description">
+              Frontend developer met passie voor design, UX en moderne
+              webtechnologieën.
+            </p>
+          </div>
+          <h1 className="name">Ricky Saarloos</h1>
         </div>
-
-        <h1 className="name">Ricky Saarloos</h1>
-      </div>
-    </main>
+      </main>
+    </Layout>
   );
 }
-        <>
-        <Header />
-      <Layout>
-      
-      
-      </Layout> 
-
-        </>
-   
 
 export default Home;

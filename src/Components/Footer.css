@@ -1,11 +1,22 @@
 .footer {
-  background-color: #1a1a1a; 
-  color: #e0e0e0; 
-  padding: 20px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #363636;
+  color: #bfbfbf;
   text-align: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin-top: 4rem;
+  padding: 0.3rem 0; 
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  border-top: 1px solid #ccc;
+  line-height: 1.2; 
 }
+
+.page-container {
+  position: relative;
+  min-height: 120vh;
+}
+
 
 .footer-content {
   max-width: 800px;
@@ -14,36 +25,29 @@
 
 .footer-title {
   font-size: 1rem;
-  color: #ffffff;
+  color: #bfbfbf;
   font-weight: 500;
   margin-bottom: 0.3rem;
 }
 
 .footer-link {
-  color: #c9c9c9;
+  color: #bfbfbf;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .footer-link:hover {
-  color: #ffffff;
+ color: #bfbfbf;
 }
 
 .footer-credit {
   margin-top: 0.6rem;
-  font-size: 0.9rem;
-  color: #a0a0a0;
+  font-size: 0.8rem;
+  color: #bfbfbf;
 }
 
 .footer-credit .italic {
   font-style: italic;
-  color: #cccccc;
+  color: #bfbfbf;
 }
 
-
-@media (max-width: 600px) {
-  .footer {
-    padding: 15px 10px;
-    font-size: 0.9rem;
-  }
-}

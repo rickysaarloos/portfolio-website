@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Contact.css";
+import Layout from "../components/Layout";
 
 const Contact = () => {
   const [result, setResult] = useState("");
@@ -35,7 +36,7 @@ const Contact = () => {
     }
   };
 
-  return (
+  return (<Layout>
     <div className="contact-container">
       <h2>Contact Me</h2>
       <form className="contact-form" onSubmit={onSubmit}>
@@ -58,6 +59,7 @@ const Contact = () => {
         <p className="result-message">{result}</p>
       </form>
     </div>
+    </Layout>
   );
 };
 

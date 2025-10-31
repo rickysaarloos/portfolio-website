@@ -1,4 +1,4 @@
-/* ========== ROOT STYLES ========== */
+
 :root {
   --primary: #a06224;
   --primary-dark: #804b1c;
@@ -14,21 +14,59 @@
 }
 
 body {
-  font-family: "Segoe UI", Roboto, sans-serif;
-  color: #222;
-  background-color: #f2f2f2;
+  font-family: "Playfair Display", serif;
+  margin: 0;
+  background-color: #e5e5e5;
+  color: #111;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+html,
+body,
+#root {
+  height: 100%;
   margin: 0;
   padding: 0;
 }
 
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+.content {
+  flex: 1; 
+}
+
+
 #root {
   width: 100%;
   text-align: center;
-  padding: var(--space-md);
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* ========== LOGO ========== */
+
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -59,65 +97,110 @@ body {
   }
 }
 
-/* ========== HOME SECTION ========== */
-.home {
-  display: flex;
-  gap: 9rem;
-  padding: var(--space-lg) var(--space-md);
-  min-height: 100vh;
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
-.photo-box {
-  width: 220px;
-  height: 320px;
-  background: #b0acac;
+.home {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  color: #333;
-  box-shadow: var(--shadow-sm);
+  gap: 5rem;
+  background-color: #e2e2e2;
+  min-height: 100vh;
+  position: relative;
+  padding: 4rem 2rem;
+}
+
+
+.photo-box {
+  width: 240px;
+  height: 340px;
+  background: #a9a5a5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #222;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.photo-box img {
+  width: 250px;   
+  height: auto;   
+  border-radius: 8px; 
+  object-fit: cover; 
 }
 
 .text-area {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  max-width: 400px;
+  align-items: flex-start;
+  position: relative;
+}
+
+
+.dev-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .dev-title {
-  font-size: 2rem;
   display: flex;
+  align-items: center;
   gap: 0.5rem;
-  flex-wrap: wrap;
+  font-size: 2.3rem;
+  font-weight: 400;
+  font-family: "Georgia", serif;
 }
 
-.light {
-  color: #222;
+.dev-title .light {
+  color: #000;
 }
 
-.dark {
-  background-color: var(--text-dark);
-  color: white;
-  padding: 0.2em 0.5em;
+.dev-title .dark {
+  background-color: #2b2b32;
+  color: #fff;
+  padding: 1.2em 0.8em;
 }
+
 
 .description {
-  margin-top: 1rem;
   font-size: 0.95rem;
-  line-height: 1.6;
+  color: #000;
+  max-width: 220px;
+  line-height: 1.4;
+  margin-top: 0.7rem;
+  margin-left: 6.2rem; 
 }
+
 
 .name {
-  margin-top: 2.5rem;
-  font-size: 2.8rem;
-  font-weight: 500;
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: #111;
+  margin-top: 3rem;
+  margin-left: -5rem; 
 }
 
-/* ========== PROJECT CARDS ========== */
+
+
+@media (max-width: 900px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .text-box {
+    align-items: center;
+  }
+
+  .name {
+    margin-top: 2rem;
+  }
+}
+
+
+
 
 
 .card-container {
@@ -129,7 +212,7 @@ body {
   padding: 0 1rem;
 }
 
-/* 🃏 Individuele kaart */
+
 .card {
   background-color: #fffdf5;
   border-radius: 10px;
@@ -165,7 +248,7 @@ body {
 }
 
 
-/* ========== DETAIL PAGE ========== */
+
 .detail-page {
   background-color: var(--bg-light);
   border-radius: 10px;
@@ -201,7 +284,7 @@ body {
   color: #7b4a0b;
 }
 
-/* Terug-knop */
+
 .detail-page a {
   display: inline-block;
   margin-top: 1.2rem;
@@ -219,7 +302,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* ========== CONTACT PAGE ========== */
 .contact-container {
   background-color: #e5e5e5;
   min-height: 100vh;
@@ -251,6 +333,7 @@ body {
   border: none;
   border-radius: 4px;
   resize: none;
+  color: #000;
 }
 
 .contact-form button {
@@ -267,7 +350,7 @@ body {
   background-color: var(--primary-dark);
 }
 
-/* ========== RESPONSIVE DESIGN ========== */
+
 @media (max-width: 800px) {
   .home {
     flex-direction: column;
@@ -298,3 +381,4 @@ body {
     width: 90%;
   }
 }
+

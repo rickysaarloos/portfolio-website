@@ -1,10 +1,22 @@
 import { Link, useParams } from "react-router-dom";
+import { useEffect } from "react";
 import projects from "./Projects";
 import "../App.css";
 
 function DetailPage() {
   const { id } = useParams();
   const project = projects.find((proj) => proj.id === parseInt(id));
+
+ 
+  useEffect(() => {
+    if (project) {
+     
+      document.title = `${project.name} | Ricky Saarloos`;
+
+    
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [project]); 
 
   if (!project) {
     return (

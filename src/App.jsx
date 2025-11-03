@@ -1,4 +1,4 @@
-// src/App.jsx
+
 import './App.css';
 import About from './pages/About';
 import Navigation from './pages/Navigation';

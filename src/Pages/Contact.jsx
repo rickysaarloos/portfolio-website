@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Contact.css";
+import "../App.css";
 import Layout from "../components/Layout";
 
 const Contact = () => {
@@ -38,7 +38,9 @@ const Contact = () => {
 
   return (<Layout>
     <div className="contact-container">
+      <h1 className="namecontact">Ricky Saarloos</h1>
       <h2>Contact Me</h2>
+      
       <form className="contact-form" onSubmit={onSubmit}>
         <label htmlFor="firstName">First Name</label>
         <input type="text" id="firstName" name="first_name" required />

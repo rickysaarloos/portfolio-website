@@ -1,4 +1,4 @@
-import './Nav.css'
+import "../App.css";
 import { Link, Outlet } from 'react-router-dom';
 
 const Navigation = () => {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../App.css";
 import Layout from "../components/Layout";
 
@@ -24,7 +24,7 @@ const Contact = () => {
 
       if (data.success) {
         setResult("Message sent successfully.");
-        event.target.reset(); 
+        event.target.reset();
       } else {
         setResult("Something went wrong, Please try again.");
       }
@@ -40,7 +40,7 @@ const Contact = () => {
     <div className="contact-container">
       <h1 className="namecontact">Ricky Saarloos</h1>
       <h2>Contact Me</h2>
-      
+
       <form className="contact-form" onSubmit={onSubmit}>
         <label htmlFor="firstName">First Name</label>
         <input type="text" id="firstName" name="first_name" required />
@@ -61,7 +61,7 @@ const Contact = () => {
         <p className="result-message">{result}</p>
       </form>
     </div>
-    </Layout>
+  </Layout>
   );
 };
 

@@ -147,8 +147,8 @@ html, body, #root {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 2.3rem;
-  font-weight: 400;
+  font-size: 3rem;
+  font-weight: 500;
   font-family: "Georgia", serif;
 }
 
@@ -175,7 +175,7 @@ html, body, #root {
 
 .name {
   font-family: "Playfair Display", serif;
-  font-size: 3rem;
+  font-size: 3.4rem;
   color: #111;
   margin-top: 3rem;
   margin-left: -5rem; 
@@ -504,7 +504,7 @@ footer a:hover {
   color: red;
 }
 
-/* ====== PAGE BASE ====== */
+
 .about-page {
   display: flex;
   flex-direction: column;
@@ -514,7 +514,7 @@ footer a:hover {
   padding-bottom: 4rem;
 }
 
-/* ====== OVER MIJ ====== */
+
 .about-section {
   display: flex;
   justify-content: space-between;
@@ -526,7 +526,7 @@ footer a:hover {
 .about-left {
   width: 45%;
   max-width: 500px;
-
+  
 }
 
 .about-left h2 {
@@ -535,7 +535,7 @@ footer a:hover {
 }
 
 .about-left p {
-  font-size: 0.9rem;
+  font-size: 1.15rem;
   line-height: 1.5;
   margin-bottom: 1rem;
 }
@@ -790,3 +790,4 @@ footer a:hover {
   width: 100%;
   max-width: 400px;
 }
+

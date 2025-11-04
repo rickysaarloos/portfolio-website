@@ -1,7 +1,16 @@
+import { Link, Outlet, useLocation } from 'react-router-dom';
+import { use, useEffect } from 'react';
 import "../App.css";
-import { Link, Outlet } from 'react-router-dom';
 
 const Navigation = () => {
+  const location = useLocation();
+
+useEffect(() => { 
+  document.title = `Ricky Saarloos | ${location.pathname === '/' ? 'Home' : location.pathname.slice(1).charAt(0).toUpperCase() + location.pathname.slice(2)}`;
+}, [location]);
+
+
+
   return (
     <div>
       <nav className="navbar">
@@ -12,7 +21,6 @@ const Navigation = () => {
           <li><Link to="/Discover">Discover</Link></li>
         </ul>
       </nav>
-      
       <Outlet />
     </div>
   );

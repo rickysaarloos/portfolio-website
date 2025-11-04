@@ -4,7 +4,7 @@ import About from './pages/About';
 import Navigation from './pages/Navigation';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
-import Discover from './pages/Discover';
+import Discover from './pages/discover';
 import DetailPage from './components/DetailPage'; 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 

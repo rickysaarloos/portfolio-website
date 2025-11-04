@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
   className="github-logo"
 >
   <img 
-    src="/images/pngimg.com - github_PNG40.png" 
+    src="./images/pngimg.com - github_PNG40.png" 
     alt="GitHub" 
   />
 </a>

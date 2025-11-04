@@ -32,10 +32,10 @@ const About = () => {
           <div className="about-right">
             <div className="photo-stack">
               <div className="photo photo1">
-                <img src="/images/IMG_7049.jpg" alt="Me 1" />
+                <img src="./images/IMG_7049.jpg" alt="Me 1" />
               </div>
               <div className="photo photo2">
-                <img src="/images/IMG_5580.jpg" alt="Me 2" />
+                <img src="./images/IMG_5580.jpg" alt="Me 2" />
                 <span className="photo-label">me</span>
               </div>
             </div>
@@ -60,7 +60,7 @@ const About = () => {
 
           <div className="interests-grid">
             <div className="interest-block dark">
-              <img src="/images/IMG_7372.jpg" alt="Daft Punk" />
+              <img src="./images/IMG_7372.jpg" alt="Daft Punk" />
               <div className="interest-text">
                 <h4>Muziek</h4>
                 <p>
@@ -84,11 +84,11 @@ const About = () => {
                 </p>
                 <span className="credit">Vetements FW16</span>
               </div>
-              <img src="/images/IMG_7371.webp" alt="Fashion" />
+              <img src="./images/IMG_7371.webp" alt="Fashion" />
             </div>
 
             <div className="interest-block light">
-              <img src="/images/IMG_7375.jpg" alt="The Thinker" />
+              <img src="./images/IMG_7375.jpg" alt="The Thinker" />
               <div className="interest-text">
                 <h4>Philosophy</h4>
                 <p>

@@ -6,10 +6,7 @@ function Home() {
   return (
     <Layout>
       <main className="home">
-        <div className="photo-box"> <img
-            src={`${process.env.PUBLIC_URL}/images/IMG_6842.jpg`}
-            alt="Ricky Saarloos"
-          /></div>
+        <div className="photo-box"><img src="./images/IMG_6842.jpg" alt="Ricky" /></div>
         <div className="text-area">
           <div className="dev-section">
             <h2 className="dev-title">

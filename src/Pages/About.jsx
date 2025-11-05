@@ -7,6 +7,7 @@ const About = () => {
     <Layout>
       <div className="about-page">
         <section className="about-section">
+ 
           <div className="about-left">
             <h2>Ricky Saarloos</h2>
             <p>

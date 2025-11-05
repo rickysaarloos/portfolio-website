@@ -550,8 +550,8 @@ footer a:hover {
 
 .photo-stack {
   position: relative;
-  width: 540px;
-  height: 690px;
+  width: 510px;
+  height: 660px;
 }
 
 .photo {
@@ -719,7 +719,7 @@ footer a:hover {
 .skills-section {
   text-align: center;
   margin: 4rem 0;
-  padding: 2rem 1rem;
+  
 }
 
 .skills-title {
@@ -850,3 +850,9 @@ footer a:hover {
     text-align: center;
   }
 }
+
+.comw{
+color: #111;
+}
+
+

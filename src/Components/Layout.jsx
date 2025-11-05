@@ -8,7 +8,7 @@ import "./Layout.css";
 const Layout = ({ children }) => {
   return (
     <div className="page-container">
-      <Header />
+   
 <a 
   href="https://github.com/rickysaarloos"
   target="_blank"

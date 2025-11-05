@@ -16,11 +16,9 @@ function Discover() {
   return (
     <Layout>
       <div className="discover-page">
-        <h2 className="text-2xl font-bold mb-2">Discover Page</h2>
-        <p>Checkout my work</p>
-        <p>Bekijk mijn werk</p>
+     
 
-       
+       <h2 className="comw">Check out my work:</h2>
         <input
           type="text"
           placeholder="Zoek een project..."

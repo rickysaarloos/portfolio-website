@@ -1,4 +1,4 @@
-
+import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -20,15 +20,12 @@ const Layout = ({ children }) => {
         />
       </a>
 
-      {/* Optional header */}
       <Header />
 
-      {/* Page content */}
       <main className="flex-1">
         {children}
       </main>
 
-      {/* Footer always at bottom */}
       <Footer />
     </div>
   );

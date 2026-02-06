@@ -6,13 +6,14 @@ function Home() {
       <main className="min-h-screen bg-[#e2e2e2] flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20 px-6 py-16">
         
         {/* Photo */}
-        <div className="w-[240px] h-[340px] bg-[#a9a5a5] shadow-md flex items-center justify-center">
-          <img
-            src="./images/IMG_6842.jpg"
-            alt="Ricky"
-            className="w-[250px] rounded-lg object-cover"
-          />
-        </div>
+    <div className="w-[240px] h-[340px] bg-[#a9a5a5] shadow-md flex items-center justify-center overflow-hidden rounded-lg">
+  <img
+    src="./images/IMG_6842.jpg"
+    alt="Ricky"
+    className="w-full h-full object-cover"
+  />
+</div>
+
 
         {/* Text */}
         <div className="flex flex-col items-start relative text-center md:text-left">

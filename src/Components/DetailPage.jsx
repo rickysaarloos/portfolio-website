@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import projects from "./Projects";
 import Layout from "../components/Layout";
-import "../App.css";
+
 
 function DetailPage() {
   const { id } = useParams();

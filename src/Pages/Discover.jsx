@@ -2,7 +2,7 @@ import { useState } from "react";
 import ProjectCard from "../components/projectCard";
 import projects from "../components/Projects";
 import Layout from "../components/Layout";
-import "../App.css";
+
 
 function Discover() {
  

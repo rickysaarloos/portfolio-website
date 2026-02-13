@@ -1,111 +1,87 @@
-import React from "react";
-import "../App.css";
-import Layout from "../components/Layout";
+import Layout from '../Components/Layout'
 
 const About = () => {
   return (
     <Layout>
-      <div className="about-page">
-        <section className="about-section">
- 
-          <div className="about-left">
-            <h2>Ricky Saarloos</h2>
-            <p>
-              Ik ben Ricky Saarloos, een software development student aan het
-              Techniek College Rotterdam. Tijdens mijn opleiding ontwikkel ik
-              kennis en vaardigheden op het gebied van webontwikkeling, waarbij ik
-              me richt op zowel de technische als de visuele kant van software.
+      <div className="mx-auto w-full max-w-6xl space-y-16 px-6 py-14 text-left">
+        <section className="grid items-start gap-12 lg:grid-cols-2">
+          <div className="space-y-4">
+            <h2 className="text-4xl font-semibold text-zinc-900">Ricky Saarloos</h2>
+            <p className="text-zinc-700">
+              Ik ben Ricky Saarloos, een software development student aan het Techniek College Rotterdam.
+              Tijdens mijn opleiding ontwikkel ik kennis en vaardigheden op het gebied van webontwikkeling,
+              waarbij ik me richt op zowel de technische als de visuele kant van software.
             </p>
-            <p>
-              Mijn interesse ligt in het creëren van gebruiksvriendelijke, goed
-              presterende en visueel aantrekkelijke websites en applicaties. Ik
-              werk graag aan projecten waarin techniek en design samenkomen om een
-              optimale gebruikerservaring te bieden.
+            <p className="text-zinc-700">
+              Mijn interesse ligt in het creëren van gebruiksvriendelijke, goed presterende en visueel
+              aantrekkelijke websites en applicaties. Ik werk graag aan projecten waarin techniek en design
+              samenkomen om een optimale gebruikerservaring te bieden.
             </p>
-            <p>
-              Binnen mijn studie en persoonlijke projecten besteed ik veel
-              aandacht aan frontend development, UX/UI-design en het toepassen
-              van moderne webtechnologieën. Mijn doel is om mezelf te blijven
-              ontwikkelen als veelzijdige developer met oog voor detail.
+            <p className="text-zinc-700">
+              Binnen mijn studie en persoonlijke projecten besteed ik veel aandacht aan frontend development,
+              UX/UI-design en het toepassen van moderne webtechnologieën.
             </p>
           </div>
 
-          <div className="about-right">
-            <div className="photo-stack">
-              <div className="photo photo1">
-                <img src="./images/IMG_7049.jpg" alt="Me 1" />
-              </div>
-              <div className="photo photo2">
-                <img src="./images/IMG_5580.jpg" alt="Me 2" />
-                <span className="photo-label">me</span>
-              </div>
+          <div className="relative mx-auto h-[420px] w-full max-w-md">
+            <img
+              src="./images/IMG_7049.jpg"
+              alt="Me 1"
+              className="absolute left-0 top-0 h-64 w-52 rounded-xl object-cover shadow-2xl"
+            />
+            <div className="absolute bottom-0 right-0">
+              <img src="./images/IMG_5580.jpg" alt="Me 2" className="h-64 w-52 rounded-xl object-cover shadow-2xl" />
+              <span className="absolute right-3 top-3 rounded bg-black/60 px-2 py-1 text-xs text-white">me</span>
             </div>
           </div>
         </section>
 
-       
-<section className="skills-section">
-  <h3 className="skills-title">vaardigheden</h3>
-  <div className="skills-grid">
-    <div className="skill-item html">HTML</div>
-    <div className="skill-item css">CSS</div>
-    <div className="skill-item js">JavaScript</div>
-    <div className="skill-item react">React</div>
-    <div className="skill-item electron">Electron.js</div>
-  </div>
-</section>
+        <section className="rounded-2xl bg-white p-8 shadow-lg">
+          <h3 className="mb-5 text-center text-2xl font-bold uppercase tracking-wider text-zinc-800">Vaardigheden</h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            {['HTML', 'CSS', 'JavaScript', 'React', 'Electron.js'].map((skill) => (
+              <span key={skill} className="rounded-full bg-zinc-900 px-5 py-2 text-sm font-semibold text-zinc-100 shadow">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </section>
 
-        
-        <section className="interests-section">
-          <h3 className="interests-title">hobby///interests</h3>
-
-          <div className="interests-grid">
-            <div className="interest-block dark">
-              <img src="./images/IMG_7372.jpg" alt="Daft Punk" />
-              <div className="interest-text">
-                <h4>Muziek</h4>
-                <p>
-                  Ik heb een brede interesse in muziek en luister graag naar
-                  verschillende stijlen en artiesten. Daft Punk behoort tot mijn
-                  favorieten vanwege hun vernieuwende geluid en creatieve
-                  benadering van elektronische muziek.
+        <section>
+          <h3 className="mb-6 text-xl font-semibold uppercase tracking-wide text-zinc-800">Hobby / interests</h3>
+          <div className="space-y-6">
+            <article className="grid items-center gap-4 rounded-xl bg-zinc-900 p-5 text-zinc-100 md:grid-cols-[220px_1fr]">
+              <img src="./images/IMG_7372.jpg" alt="Daft Punk" className="h-52 w-full rounded-lg object-cover" />
+              <div>
+                <h4 className="mb-2 text-lg font-semibold">Muziek</h4>
+                <p className="text-sm text-zinc-300">
+                  Ik heb een brede interesse in muziek en luister graag naar verschillende stijlen en artiesten.
                 </p>
-                <span className="credit">Daft Punk</span>
               </div>
-            </div>
-
-            <div className="interest-block dark">
-              <div className="interest-text">
-                <h4>Fashion</h4>
-                <p>
-                  Ik volg met interesse de wereld van fashion, in het bijzonder
-                  couture. De combinatie van vakmanschap, detail en artistieke
-                  expressie binnen de mode-industrie spreekt me aan en inspireert
-                  mijn waardering voor esthetiek en design.
+            </article>
+            <article className="grid items-center gap-4 rounded-xl bg-zinc-900 p-5 text-zinc-100 md:grid-cols-[1fr_220px]">
+              <div>
+                <h4 className="mb-2 text-lg font-semibold">Fashion</h4>
+                <p className="text-sm text-zinc-300">
+                  Ik volg met interesse de wereld van fashion, in het bijzonder couture.
                 </p>
-                <span className="credit">Vetements FW16</span>
               </div>
-              <img src="./images/IMG_7371.webp" alt="Fashion" />
-            </div>
-
-            <div className="interest-block light">
-              <img src="./images/IMG_7375.jpg" alt="The Thinker" />
-              <div className="interest-text">
-                <h4>Philosophy</h4>
-                <p>
-                  Filosofie boeit me door de manier waarop het aanzet tot kritisch
-                  denken en reflectie. Het helpt me vraagstukken vanuit
-                  verschillende perspectieven te bekijken en bewuster om te gaan
-                  met ideeën en beslissingen.
+              <img src="./images/IMG_7371.webp" alt="Fashion" className="h-52 w-full rounded-lg object-cover" />
+            </article>
+            <article className="grid items-center gap-4 rounded-xl bg-zinc-200 p-5 text-zinc-900 md:grid-cols-[220px_1fr]">
+              <img src="./images/IMG_7375.jpg" alt="The Thinker" className="h-52 w-full rounded-lg object-cover" />
+              <div>
+                <h4 className="mb-2 text-lg font-semibold">Philosophy</h4>
+                <p className="text-sm text-zinc-700">
+                  Filosofie boeit me door de manier waarop het aanzet tot kritisch denken en reflectie.
                 </p>
-                <span className="credit">The Thinker</span>
               </div>
-            </div>
+            </article>
           </div>
         </section>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default About;
+export default About

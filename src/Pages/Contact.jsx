@@ -1,5 +1,24 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Layout from '../Components/Layout'
+
+const contactHighlights = [
+  { label: 'Zuid-Holland', value: 'Locatie' },
+
+]
+
+const quickLinks = [
+  {
+    title: 'Bekijk projecten',
+    description: 'Zie recente cases en technische keuzes.',
+    to: '/discover',
+  },
+  {
+    title: 'Over mij',
+    description: 'Lees meer over mijn aanpak en expertise.',
+    to: '/about',
+  },
+]
 
 const Contact = () => {
   const [result, setResult] = useState('')
@@ -22,14 +41,14 @@ const Contact = () => {
       const data = await response.json()
 
       if (data.success) {
-        setResult('Message sent successfully.')
+        setResult('Bericht succesvol verzonden. Ik neem snel contact op.')
         event.target.reset()
       } else {
-        setResult('Something went wrong, Please try again.')
+        setResult('Er ging iets mis. Probeer het opnieuw.')
       }
     } catch (error) {
       console.error('Error submitting form:', error)
-      setResult('⚠️ Error sending message. Try again later.')
+      setResult('⚠️ Er ging iets mis bij het verzenden.')
     } finally {
       setIsSubmitting(false)
     }
@@ -37,43 +56,125 @@ const Contact = () => {
 
   return (
     <Layout>
-      <div className="mx-auto flex min-h-[calc(100vh-140px)] w-full max-w-3xl flex-col items-center justify-center px-6 py-12">
-        <h1 className="mb-2 text-4xl font-semibold text-zinc-900">Ricky Saarloos</h1>
-        <h2 className="mb-8 text-xl text-zinc-700">Contact Me</h2>
+      <main className="mx-auto w-full max-w-6xl px-6 py-14">
+        <section className="grid gap-10 rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm lg:grid-cols-[1fr_1.1fr]">
 
-        <form className="w-full rounded-2xl bg-white p-8 shadow-xl" onSubmit={onSubmit}>
-          <div className="grid gap-5 md:grid-cols-2">
-            <div className="flex flex-col gap-2">
-              <label htmlFor="firstName" className="text-sm font-medium text-zinc-700">First Name</label>
-              <input className="rounded-lg border border-zinc-300 px-3 py-2" type="text" id="firstName" name="first_name" required />
+          {/* LEFT SIDE */}
+          <div>
+            <span className="inline-flex rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold text-zinc-600">
+              Contact
+            </span>
+
+            <h1 className="mt-4 text-4xl font-semibold text-zinc-950 md:text-5xl">
+              Laten we samenwerken
+            </h1>
+
+            <p className="mt-6 max-w-xl text-zinc-700 leading-8">
+              Werk je aan een website of productidee en zoek je een developer
+              die design en techniek combineert? Stuur me een bericht
+              en ik kom snel bij je terug.
+            </p>
+
+            <ul className="mt-8 flex flex-wrap gap-3">
+              {contactHighlights.map((item) => (
+                <li
+                  key={item.value}
+                  className="rounded-full border border-zinc-300 bg-zinc-100 px-3 py-1.5 text-sm"
+                >
+                  <span className="font-semibold">{item.value}</span> · {item.label}
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-10 space-y-4">
+              {quickLinks.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className="block rounded-2xl border border-zinc-200 bg-zinc-50 p-4 transition hover:bg-zinc-100"
+                >
+                  <p className="text-sm font-semibold text-zinc-900">
+                    {item.title}
+                  </p>
+                  <p className="mt-1 text-sm text-zinc-600">
+                    {item.description}
+                  </p>
+                </Link>
+              ))}
             </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="lastName" className="text-sm font-medium text-zinc-700">Last Name</label>
-              <input className="rounded-lg border border-zinc-300 px-3 py-2" type="text" id="lastName" name="last_name" required />
-            </div>
           </div>
 
-          <div className="mt-5 flex flex-col gap-2">
-            <label htmlFor="email" className="text-sm font-medium text-zinc-700">Email</label>
-            <input className="rounded-lg border border-zinc-300 px-3 py-2" type="email" id="email" name="email" required />
-          </div>
-
-          <div className="mt-5 flex flex-col gap-2">
-            <label htmlFor="message" className="text-sm font-medium text-zinc-700">Message</label>
-            <textarea className="min-h-28 rounded-lg border border-zinc-300 px-3 py-2" id="message" name="message" required />
-          </div>
-
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="mt-6 w-full rounded-lg bg-zinc-900 px-4 py-2 font-medium text-white transition hover:bg-zinc-700 disabled:cursor-not-allowed disabled:opacity-70"
+          {/* RIGHT SIDE FORM */}
+          <form
+            onSubmit={onSubmit}
+            className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6 shadow-sm"
           >
-            {isSubmitting ? 'Sending...' : 'Send'}
-          </button>
+            <h2 className="text-xl font-semibold text-zinc-900">
+              Stuur een bericht
+            </h2>
+      
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              <label className="flex flex-col gap-2 text-sm font-medium text-zinc-700">
+                First Name
+                <input
+                  type="text"
+                  name="first_name"
+                  required
+                  className="rounded-xl border border-zinc-300 bg-white px-3 py-2.5 outline-none focus:border-zinc-500 focus:ring-2 focus:ring-zinc-300"
+                  placeholder="Ricky"
+                />
+              </label>
 
-          {result && <p className="mt-4 text-sm text-zinc-700">{result}</p>}
-        </form>
-      </div>
+              <label className="flex flex-col gap-2 text-sm font-medium text-zinc-700">
+                Last Name
+                <input
+                  type="text"
+                  name="last_name"
+                  required
+                  className="rounded-xl border border-zinc-300 bg-white px-3 py-2.5 outline-none focus:border-zinc-500 focus:ring-2 focus:ring-zinc-300"
+                  placeholder="Saarloos"
+                />
+              </label>
+            </div>
+
+            <label className="mt-4 flex flex-col gap-2 text-sm font-medium text-zinc-700">
+              Email
+              <input
+                type="email"
+                name="email"
+                required
+                className="rounded-xl border border-zinc-300 bg-white px-3 py-2.5 outline-none focus:border-zinc-500 focus:ring-2 focus:ring-zinc-300"
+                placeholder="you@company.com"
+              />
+            </label>
+
+            <label className="mt-4 flex flex-col gap-2 text-sm font-medium text-zinc-700">
+              Message
+              <textarea
+                name="message"
+                required
+                className="min-h-36 rounded-xl border border-zinc-300 bg-white px-3 py-2.5 outline-none focus:border-zinc-500 focus:ring-2 focus:ring-zinc-300"
+                placeholder="Vertel kort over je project, planning en doelen..."
+              />
+            </label>
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="mt-6 w-full rounded-full bg-zinc-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800 disabled:opacity-70"
+            >
+              {isSubmitting ? 'Bezig met verzenden...' : 'Verstuur bericht'}
+            </button>
+
+            {result && (
+              <p className="mt-4 text-sm font-medium text-zinc-700">
+                {result}
+              </p>
+            )}
+          </form>
+
+        </section>
+      </main>
     </Layout>
   )
 }

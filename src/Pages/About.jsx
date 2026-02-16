@@ -1,84 +1,172 @@
+import { Link } from 'react-router-dom'
 import Layout from '../Components/Layout'
+
+const imageBase = `${import.meta.env.BASE_URL}images/`
+
+const profileImages = {
+  main: `${imageBase}IMG_7049.jpg`,
+  side: `${imageBase}IMG_5580.jpg`,
+}
+
+const highlights = [
+  { label: 'Techniek College Rotterdam', value: 'MBO 4' },
+  { label: 'Focus', value: 'Frontend + UX' },
+]
+
+const expertise = [
+  {
+    title: 'Frontend Development',
+    description:
+      'Ik bouw schaalbare interfaces met aandacht voor performance, herbruikbare componenten en heldere code-architectuur.',
+    stack: ['React', 'JavaScript', 'Vite'],
+  },
+  {
+    title: 'UI/UX Design',
+    description:
+      'Ik vertaal ideeën naar intuïtieve user flows en visuele interfaces die zowel strak ogen als logisch werken.',
+    stack: ['Design systems', 'Accessibility', 'UX thinking'],
+  },
+  {
+    title: 'Samenwerking',
+    description:
+      'Ik werk gestructureerd met feedback, deadlines en duidelijke communicatie om projecten soepel op te leveren.',
+    stack: ['Git workflow', 'Iteratief werken', 'Heldere documentatie'],
+  },
+]
+
+const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Electron.js']
 
 const About = () => {
   return (
     <Layout>
-      <div className="mx-auto w-full max-w-6xl space-y-16 px-6 py-14 text-left">
-        <section className="grid items-start gap-12 lg:grid-cols-2">
-          <div className="space-y-4">
-            <h2 className="text-4xl font-semibold text-zinc-900">Ricky Saarloos</h2>
-            <p className="text-zinc-700">
-              Ik ben Ricky Saarloos, een software development student aan het Techniek College Rotterdam.
-              Tijdens mijn opleiding ontwikkel ik kennis en vaardigheden op het gebied van webontwikkeling,
-              waarbij ik me richt op zowel de technische als de visuele kant van software.
+      <div className="mx-auto w-full max-w-6xl space-y-16 px-6 py-14">
+
+        {/* HERO */}
+        <section className="grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <span className="inline-block rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold text-zinc-600">
+              About Me
+            </span>
+
+            <h1 className="mt-4 text-4xl font-semibold text-zinc-950 md:text-5xl">
+              Ricky Saarloos
+            </h1>
+
+            <p className="mt-6 text-zinc-700 leading-8">
+              Ik ben software development student aan het Techniek College Rotterdam
+              en specialiseer me in het ontwerpen en bouwen van moderne webinterfaces.
+              Mijn doel is digitale producten te maken die snel, toegankelijk en professioneel aanvoelen.
             </p>
-            <p className="text-zinc-700">
-              Mijn interesse ligt in het creëren van gebruiksvriendelijke, goed presterende en visueel
-              aantrekkelijke websites en applicaties. Ik werk graag aan projecten waarin techniek en design
-              samenkomen om een optimale gebruikerservaring te bieden.
+
+            <p className="mt-4 text-zinc-700 leading-8">
+              Ik combineer technische precisie met visuele kwaliteit: van componentstructuur
+              en performance tot typografie, spacing en gebruikservaring.
             </p>
-            <p className="text-zinc-700">
-              Binnen mijn studie en persoonlijke projecten besteed ik veel aandacht aan frontend development,
-              UX/UI-design en het toepassen van moderne webtechnologieën.
-            </p>
+
+            <div className="mt-8 flex gap-4">
+              <Link
+                to="/discover"
+                className="rounded-full border border-zinc-300 px-5 py-2.5 text-sm font-semibold text-zinc-800 hover:bg-zinc-100"
+              >
+                Bekijk mijn werk
+              </Link>
+              <Link
+                to="/contact"
+                className="rounded-full border border-zinc-300 px-5 py-2.5 text-sm font-semibold text-zinc-800 hover:bg-zinc-100"
+              >
+                Neem contact op
+              </Link>
+            </div>
           </div>
 
-          <div className="relative mx-auto h-[420px] w-full max-w-md">
-            <img
-              src="./images/IMG_7049.jpg"
-              alt="Me 1"
-              className="absolute left-0 top-0 h-64 w-52 rounded-xl object-cover shadow-2xl"
-            />
-            <div className="absolute bottom-0 right-0">
-              <img src="./images/IMG_5580.jpg" alt="Me 2" className="h-64 w-52 rounded-xl object-cover shadow-2xl" />
-              <span className="absolute right-3 top-3 rounded bg-black/60 px-2 py-1 text-xs text-white">me</span>
+          {/* Images */}
+          <div className="relative mx-auto h-[420px] w-full max-w-sm">
+            <div className="absolute left-0 top-0 rounded-2xl bg-gradient-to-br from-zinc-200 to-zinc-400 p-[5px] shadow-xl">
+              <img
+                src={profileImages.main}
+                alt="Ricky portrait"
+                className="h-64 w-52 rounded-xl object-cover"
+              />
+            </div>
+
+            <div className="absolute bottom-0 right-0 rounded-2xl bg-gradient-to-br from-zinc-300 to-zinc-500 p-[5px] shadow-xl">
+              <img
+                src={profileImages.side}
+                alt="Ricky portrait 2"
+                className="h-64 w-52 rounded-xl object-cover"
+              />
+              <span className="absolute right-3 top-3 rounded bg-black/70 px-2 py-1 text-xs text-white">
+                portfolio
+              </span>
             </div>
           </div>
         </section>
 
-        <section className="rounded-2xl bg-white p-8 shadow-lg">
-          <h3 className="mb-5 text-center text-2xl font-bold uppercase tracking-wider text-zinc-800">Vaardigheden</h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {['HTML', 'CSS', 'JavaScript', 'React', 'Electron.js'].map((skill) => (
-              <span key={skill} className="rounded-full bg-zinc-900 px-5 py-2 text-sm font-semibold text-zinc-100 shadow">
-                {skill}
-              </span>
+        {/* Highlights */}
+        <section className="grid gap-6 md:grid-cols-3">
+          {highlights.map((item) => (
+            <div
+              key={item.label}
+              className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm"
+            >
+              <p className="text-3xl font-semibold text-zinc-950">
+                {item.value}
+              </p>
+              <p className="mt-2 text-sm text-zinc-600">
+                {item.label}
+              </p>
+            </div>
+          ))}
+        </section>
+
+        {/* Expertise */}
+        <section className="rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm">
+          <h2 className="text-2xl font-semibold text-zinc-900">
+            Waar ik waarde toevoeg
+          </h2>
+
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
+            {expertise.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl bg-zinc-50 p-6"
+              >
+                <h3 className="text-lg font-semibold text-zinc-900">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm text-zinc-700 leading-7">
+                  {item.description}
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {item.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-full border border-zinc-300 bg-white px-3 py-1 text-xs text-zinc-700"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </section>
 
-        <section>
-          <h3 className="mb-6 text-xl font-semibold uppercase tracking-wide text-zinc-800">Hobby / interests</h3>
-          <div className="space-y-6">
-            <article className="grid items-center gap-4 rounded-xl bg-zinc-900 p-5 text-zinc-100 md:grid-cols-[220px_1fr]">
-              <img src="./images/IMG_7372.jpg" alt="Daft Punk" className="h-52 w-full rounded-lg object-cover" />
-              <div>
-                <h4 className="mb-2 text-lg font-semibold">Muziek</h4>
-                <p className="text-sm text-zinc-300">
-                  Ik heb een brede interesse in muziek en luister graag naar verschillende stijlen en artiesten.
-                </p>
-              </div>
-            </article>
-            <article className="grid items-center gap-4 rounded-xl bg-zinc-900 p-5 text-zinc-100 md:grid-cols-[1fr_220px]">
-              <div>
-                <h4 className="mb-2 text-lg font-semibold">Fashion</h4>
-                <p className="text-sm text-zinc-300">
-                  Ik volg met interesse de wereld van fashion, in het bijzonder couture.
-                </p>
-              </div>
-              <img src="./images/IMG_7371.webp" alt="Fashion" className="h-52 w-full rounded-lg object-cover" />
-            </article>
-            <article className="grid items-center gap-4 rounded-xl bg-zinc-200 p-5 text-zinc-900 md:grid-cols-[220px_1fr]">
-              <img src="./images/IMG_7375.jpg" alt="The Thinker" className="h-52 w-full rounded-lg object-cover" />
-              <div>
-                <h4 className="mb-2 text-lg font-semibold">Philosophy</h4>
-                <p className="text-sm text-zinc-700">
-                  Filosofie boeit me door de manier waarop het aanzet tot kritisch denken en reflectie.
-                </p>
-              </div>
-            </article>
-          </div>
+        {/* Tech stack */}
+        <section className="rounded-3xl bg-zinc-900 p-8 text-white">
+          <h2 className="text-2xl font-semibold">Tech stack</h2>
+          <ul className="mt-6 flex flex-wrap gap-3">
+            {skills.map((skill) => (
+              <li
+                key={skill}
+                className="rounded-full bg-zinc-800 px-4 py-1.5 text-sm"
+              >
+                {skill}
+              </li>
+            ))}
+          </ul>
         </section>
+
       </div>
     </Layout>
   )

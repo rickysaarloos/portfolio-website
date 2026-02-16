@@ -857,6 +857,7 @@ color: #111;
 
 
 
+
 @keyframes homeFadeUp {
   from {
     opacity: 0;
@@ -880,6 +881,24 @@ color: #111;
 @media (prefers-reduced-motion: reduce) {
   .home-photo-reveal,
   .home-content-reveal {
+    animation: none;
+  }
+}
+
+.about-reveal {
+  animation: homeFadeUp 0.55s ease-out both;
+}
+
+.about-reveal:nth-of-type(2) {
+  animation-delay: 0.08s;
+}
+
+.about-reveal:nth-of-type(3) {
+  animation-delay: 0.16s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-reveal {
     animation: none;
   }
 }

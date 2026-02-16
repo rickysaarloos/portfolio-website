@@ -32,7 +32,7 @@ function Home() {
           <p className="mt-6 max-w-xl text-base leading-8 text-zinc-700">
             Frontend developer met passie voor design, UX en moderne webtechnologieën.
           </p>
-          <h1 className="mt-8 text-5xl font-semibold tracking-tight text-zinc-950 md:text-6xl">Ricky Saarloos</h1>
+         
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link

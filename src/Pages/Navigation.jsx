@@ -25,8 +25,12 @@ const Navigation = () => {
               <li key={link.to}>
                 <Link
                   to={link.to}
+                  aria-current={isActive ? 'page' : undefined}
+                  style={isActive ? { color: '#f8fafc' } : undefined}
                   className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-                    isActive ? 'bg-zinc-900 text-white' : 'text-zinc-700 hover:bg-zinc-200'
+                    isActive
+                      ? 'bg-zinc-800 text-zinc-50 shadow-sm ring-1 ring-zinc-700/30'
+                      : 'text-zinc-700 hover:bg-zinc-200'
                   }`}
                 >
                   {link.label}

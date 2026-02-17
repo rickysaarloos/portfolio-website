@@ -34,7 +34,7 @@ const expertise = [
   },
 ]
 
-const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Electron.js']
+const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Electron.js, Vite', 'Tailwind CSS', 'Node.js', 'Figma']
 
 const About = () => {
   return (
@@ -81,19 +81,19 @@ const About = () => {
 
           {/* Images */}
           <div className="relative mx-auto h-[420px] w-full max-w-sm">
-            <div className="absolute left-0 top-0 rounded-2xl bg-gradient-to-br from-zinc-200 to-zinc-400 p-[5px] shadow-xl">
+            <div className="absolute left-0 top-0  bg-gradient-to-br from-zinc-200 to-zinc-400 p-[5px] shadow-xl">
               <img
                 src={profileImages.main}
                 alt="Ricky portrait"
-                className="h-64 w-52 rounded-xl object-cover"
+                className="h-64 w-52  object-cover"
               />
             </div>
 
-            <div className="absolute bottom-0 right-0 rounded-2xl bg-gradient-to-br from-zinc-300 to-zinc-500 p-[5px] shadow-xl">
+            <div className="absolute bottom-0 right-0  bg-gradient-to-br from-zinc-300 to-zinc-500 p-[5px] shadow-xl">
               <img
                 src={profileImages.side}
                 alt="Ricky portrait 2"
-                className="h-64 w-52 rounded-xl object-cover"
+                className="h-64 w-52  object-cover"
               />
               <span className="absolute right-3 top-3 rounded bg-black/70 px-2 py-1 text-xs text-white">
                 portfolio

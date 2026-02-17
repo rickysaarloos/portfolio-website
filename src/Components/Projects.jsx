@@ -1,4 +1,4 @@
-
+const imageBase = `${import.meta.env.BASE_URL}images/`
 
 const projects = [
   {
@@ -76,7 +76,7 @@ const projects = [
     category: "Full-stack web app",
     year: "2026",
     stack: ["MongoDB", "Express", "React", "Vite", "Tailwind CSS"],
-    image: `${imageBase}fitd-cover.svg`,
+    image: `${imageBase}Schermafbeelding 2026-02-11 115125.png`,
     description:
       "Een full-stack fashion marketplace app gebouwd met MERN.",
     repositoryUrl:
@@ -85,12 +85,12 @@ const projects = [
       {
         title: "Marketplace homepage",
         text: "Premium donkere homepage met duidelijke CTA’s.",
-        image: `${imageBase}Schermafbeelding 2026-02-11 115125.png`,
+        image: `${imageBase}fitd-cover.svg`,
       },
       {
         title: "MERN architectuur",
         text: "MongoDB + Express backend en React (Vite) + Tailwind frontend.",
-       
+        image: `${imageBase}fitd-detail.svg`,
       },
     ],
   },

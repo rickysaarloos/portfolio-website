@@ -85,12 +85,12 @@ const projects = [
       {
         title: "Marketplace homepage",
         text: "Premium donkere homepage met duidelijke CTA’s.",
-        image: `${imageBase}fitd-cover.svg`,
+        image: `${imageBase}Schermafbeelding 2026-02-17 044106.png`,
       },
       {
         title: "MERN architectuur",
         text: "MongoDB + Express backend en React (Vite) + Tailwind frontend.",
-        image: `${imageBase}fitd-detail.svg`,
+        image: `${imageBase}Schermafbeelding 2026-02-17 043844.png`,
       },
     ],
   },

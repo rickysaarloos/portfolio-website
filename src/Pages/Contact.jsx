@@ -57,19 +57,19 @@ const Contact = () => {
   return (
     <Layout>
       <main className="mx-auto w-full max-w-6xl px-6 py-14">
-        <section className="grid gap-10 rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm lg:grid-cols-[1fr_1.1fr]">
+        <section className="grid gap-10 rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 lg:grid-cols-[1fr_1.1fr]">
 
           {/* LEFT SIDE */}
           <div>
-            <span className="inline-flex rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold text-zinc-600">
+            <span className="inline-flex rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">
               Contact
             </span>
 
-            <h1 className="mt-4 text-4xl font-semibold text-zinc-950 md:text-5xl">
+            <h1 className="mt-4 text-4xl font-semibold text-zinc-950 dark:text-zinc-50 md:text-5xl">
               Laten we samenwerken
             </h1>
 
-            <p className="mt-6 max-w-xl text-zinc-700 leading-8">
+            <p className="mt-6 max-w-xl text-zinc-700 leading-8 dark:text-zinc-300">
               Werk je aan een website of productidee en zoek je een developer
               die design en techniek combineert? Stuur me een bericht
               en ik kom snel bij je terug.
@@ -79,7 +79,7 @@ const Contact = () => {
               {contactHighlights.map((item) => (
                 <li
                   key={item.value}
-                  className="rounded-full border border-zinc-300 bg-zinc-100 px-3 py-1.5 text-sm"
+                  className="rounded-full border border-zinc-300 bg-zinc-100 px-3 py-1.5 text-sm dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200"
                 >
                   <span className="font-semibold">{item.value}</span> · {item.label}
                 </li>
@@ -91,12 +91,12 @@ const Contact = () => {
                 <Link
                   key={item.to}
                   to={item.to}
-                  className="block rounded-2xl border border-zinc-200 bg-zinc-50 p-4 transition hover:bg-zinc-100"
+                  className="block rounded-2xl border border-zinc-200 bg-zinc-50 p-4 transition hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-800/60 dark:hover:bg-zinc-800"
                 >
-                  <p className="text-sm font-semibold text-zinc-900">
+                  <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
                     {item.title}
                   </p>
-                  <p className="mt-1 text-sm text-zinc-600">
+                  <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
                     {item.description}
                   </p>
                 </Link>
@@ -107,53 +107,53 @@ const Contact = () => {
           {/* RIGHT SIDE FORM */}
           <form
             onSubmit={onSubmit}
-            className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6 shadow-sm"
+            className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6 shadow-sm dark:border-zinc-700 dark:bg-zinc-800/40"
           >
-            <h2 className="text-xl font-semibold text-zinc-900">
+            <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100">
               Stuur een bericht
             </h2>
       
             <div className="mt-6 grid gap-4 md:grid-cols-2">
-              <label className="flex flex-col gap-2 text-sm font-medium text-zinc-700">
+              <label className="flex flex-col gap-2 text-sm font-medium text-zinc-700 dark:text-zinc-300">
                 First Name
                 <input
                   type="text"
                   name="first_name"
                   required
-                  className="rounded-xl border border-zinc-300 bg-white px-3 py-2.5 outline-none focus:border-zinc-500 focus:ring-2 focus:ring-zinc-300"
+                  className="rounded-xl border border-zinc-300 bg-white px-3 py-2.5 outline-none focus:border-zinc-500 focus:ring-2 focus:ring-zinc-300 dark:border-zinc-600 dark:bg-zinc-900 dark:text-zinc-100 dark:focus:border-zinc-400 dark:focus:ring-zinc-700"
                   placeholder="Ricky"
                 />
               </label>
 
-              <label className="flex flex-col gap-2 text-sm font-medium text-zinc-700">
+              <label className="flex flex-col gap-2 text-sm font-medium text-zinc-700 dark:text-zinc-300">
                 Last Name
                 <input
                   type="text"
                   name="last_name"
                   required
-                  className="rounded-xl border border-zinc-300 bg-white px-3 py-2.5 outline-none focus:border-zinc-500 focus:ring-2 focus:ring-zinc-300"
+                  className="rounded-xl border border-zinc-300 bg-white px-3 py-2.5 outline-none focus:border-zinc-500 focus:ring-2 focus:ring-zinc-300 dark:border-zinc-600 dark:bg-zinc-900 dark:text-zinc-100 dark:focus:border-zinc-400 dark:focus:ring-zinc-700"
                   placeholder="Saarloos"
                 />
               </label>
             </div>
 
-            <label className="mt-4 flex flex-col gap-2 text-sm font-medium text-zinc-700">
+            <label className="mt-4 flex flex-col gap-2 text-sm font-medium text-zinc-700 dark:text-zinc-300">
               Email
               <input
                 type="email"
                 name="email"
                 required
-                className="rounded-xl border border-zinc-300 bg-white px-3 py-2.5 outline-none focus:border-zinc-500 focus:ring-2 focus:ring-zinc-300"
+                className="rounded-xl border border-zinc-300 bg-white px-3 py-2.5 outline-none focus:border-zinc-500 focus:ring-2 focus:ring-zinc-300 dark:border-zinc-600 dark:bg-zinc-900 dark:text-zinc-100 dark:focus:border-zinc-400 dark:focus:ring-zinc-700"
                 placeholder="you@company.com"
               />
             </label>
 
-            <label className="mt-4 flex flex-col gap-2 text-sm font-medium text-zinc-700">
+            <label className="mt-4 flex flex-col gap-2 text-sm font-medium text-zinc-700 dark:text-zinc-300">
               Message
               <textarea
                 name="message"
                 required
-                className="min-h-36 rounded-xl border border-zinc-300 bg-white px-3 py-2.5 outline-none focus:border-zinc-500 focus:ring-2 focus:ring-zinc-300"
+                className="min-h-36 rounded-xl border border-zinc-300 bg-white px-3 py-2.5 outline-none focus:border-zinc-500 focus:ring-2 focus:ring-zinc-300 dark:border-zinc-600 dark:bg-zinc-900 dark:text-zinc-100 dark:focus:border-zinc-400 dark:focus:ring-zinc-700"
                 placeholder="Vertel kort over je project, planning en doelen..."
               />
             </label>
@@ -161,13 +161,13 @@ const Contact = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="mt-6 w-full rounded-full bg-zinc-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800 disabled:opacity-70"
+              className="mt-6 w-full rounded-full bg-zinc-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800 disabled:opacity-70 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
             >
               {isSubmitting ? 'Bezig met verzenden...' : 'Verstuur bericht'}
             </button>
 
             {result && (
-              <p className="mt-4 text-sm font-medium text-zinc-700">
+              <p className="mt-4 text-sm font-medium text-zinc-700 dark:text-zinc-300">
                 {result}
               </p>
             )}

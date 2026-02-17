@@ -1,13 +1,9 @@
-import { Link } from 'react-router-dom'
-
 const Footer = () => {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="mt-14 border-t border-zinc-300 bg-zinc-900 text-zinc-200">
+    <footer className="mt-14 border-t border-zinc-300 bg-zinc-900 text-zinc-200 dark:border-zinc-800 dark:bg-black">
       <div className="mx-auto grid w-full max-w-6xl gap-8 px-6 py-10 text-left md:grid-cols-[1.2fr_0.8fr_0.8fr]">
-        
-        {/* Brand */}
         <section>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-400">
             Portfolio
@@ -22,9 +18,6 @@ const Footer = () => {
           </p>
         </section>
 
-   
-
-        {/* Contact */}
         <section>
           <h3 className="text-sm font-semibold uppercase tracking-wide text-zinc-300">
             Contact
@@ -60,15 +53,11 @@ const Footer = () => {
         </section>
       </div>
 
-      {/* Bottom bar */}
       <div className="border-t border-zinc-800">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-6 py-4 text-xs text-zinc-500 md:flex-row md:items-center md:justify-between">
           <p>© {year} Ricky Saarloos. Alle rechten voorbehouden.</p>
           <p>
-            Built with{' '}
-            <span className="font-medium text-zinc-300">
-              React + Vite
-            </span>
+            Built with <span className="font-medium text-zinc-300">React + Vite</span>
           </p>
         </div>
       </div>

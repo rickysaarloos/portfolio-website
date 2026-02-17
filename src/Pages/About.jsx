@@ -44,21 +44,21 @@ const About = () => {
         {/* HERO */}
         <section className="grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <span className="inline-block rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold text-zinc-600">
+            <span className="inline-block rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">
               About Me
             </span>
 
-            <h1 className="mt-4 text-4xl font-semibold text-zinc-950 md:text-5xl">
+            <h1 className="mt-4 text-4xl font-semibold text-zinc-950 dark:text-zinc-50 md:text-5xl">
               Ricky Saarloos
             </h1>
 
-            <p className="mt-6 text-zinc-700 leading-8">
+            <p className="mt-6 text-zinc-700 leading-8 dark:text-zinc-300">
               Ik ben software development student aan het Techniek College Rotterdam
               en specialiseer me in het ontwerpen en bouwen van moderne webinterfaces.
               Mijn doel is digitale producten te maken die snel, toegankelijk en professioneel aanvoelen.
             </p>
 
-            <p className="mt-4 text-zinc-700 leading-8">
+            <p className="mt-4 text-zinc-700 leading-8 dark:text-zinc-300">
               Ik combineer technische precisie met visuele kwaliteit: van componentstructuur
               en performance tot typografie, spacing en gebruikservaring.
             </p>
@@ -66,13 +66,13 @@ const About = () => {
             <div className="mt-8 flex gap-4">
               <Link
                 to="/discover"
-                className="rounded-full border border-zinc-300 px-5 py-2.5 text-sm font-semibold text-zinc-800 hover:bg-zinc-100"
+                className="rounded-full border border-zinc-300 px-5 py-2.5 text-sm font-semibold text-zinc-800 hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-800"
               >
                 Bekijk mijn werk
               </Link>
               <Link
                 to="/contact"
-                className="rounded-full border border-zinc-300 px-5 py-2.5 text-sm font-semibold text-zinc-800 hover:bg-zinc-100"
+                className="rounded-full border border-zinc-300 px-5 py-2.5 text-sm font-semibold text-zinc-800 hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-800"
               >
                 Neem contact op
               </Link>
@@ -107,12 +107,12 @@ const About = () => {
           {highlights.map((item) => (
             <div
               key={item.label}
-              className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm"
+              className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
             >
-              <p className="text-3xl font-semibold text-zinc-950">
+              <p className="text-3xl font-semibold text-zinc-950 dark:text-zinc-100">
                 {item.value}
               </p>
-              <p className="mt-2 text-sm text-zinc-600">
+              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
                 {item.label}
               </p>
             </div>
@@ -120,8 +120,8 @@ const About = () => {
         </section>
 
         {/* Expertise */}
-        <section className="rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm">
-          <h2 className="text-2xl font-semibold text-zinc-900">
+        <section className="rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <h2 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
             Waar ik waarde toevoeg
           </h2>
 
@@ -129,19 +129,19 @@ const About = () => {
             {expertise.map((item) => (
               <div
                 key={item.title}
-                className="rounded-2xl bg-zinc-50 p-6"
+                className="rounded-2xl bg-zinc-50 p-6 dark:bg-zinc-800/50"
               >
-                <h3 className="text-lg font-semibold text-zinc-900">
+                <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm text-zinc-700 leading-7">
+                <p className="mt-3 text-sm text-zinc-700 leading-7 dark:text-zinc-300">
                   {item.description}
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {item.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-full border border-zinc-300 bg-white px-3 py-1 text-xs text-zinc-700"
+                      className="rounded-full border border-zinc-300 bg-white px-3 py-1 text-xs text-zinc-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300"
                     >
                       {tech}
                     </span>
@@ -153,13 +153,13 @@ const About = () => {
         </section>
 
         {/* Tech stack */}
-        <section className="rounded-3xl bg-zinc-900 p-8 text-white">
+        <section className="rounded-3xl bg-zinc-900 p-8 text-white dark:bg-black">
           <h2 className="text-2xl font-semibold">Tech stack</h2>
           <ul className="mt-6 flex flex-wrap gap-3">
             {skills.map((skill) => (
               <li
                 key={skill}
-                className="rounded-full bg-zinc-800 px-4 py-1.5 text-sm"
+                className="rounded-full bg-zinc-800 px-4 py-1.5 text-sm dark:bg-zinc-700"
               >
                 {skill}
               </li>

@@ -37,3 +37,58 @@ body {
 a {
   @apply text-inherit no-underline;
 }
+
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 0;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal          { transform: translateY(28px); }
+  .reveal-left     { transform: translateX(-32px); }
+  .reveal-right    { transform: translateX(32px); }
+  .reveal-scale    { transform: scale(0.96); }
+
+  .reveal-visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  Stagger children with delay utilities:
+  .reveal-delay-1  { transition-delay: 0.1s; }
+  .reveal-delay-2  { transition-delay: 0.2s; }
+  .reveal-delay-3  { transition-delay: 0.3s; }
+  .reveal-delay-4  { transition-delay: 0.4s; }
+  .reveal-delay-5  { transition-delay: 0.5s; }
+
+  .typewriter-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: currentColor;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: cursor-blink 0.9s step-end infinite;
+  opacity: 1;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -58,6 +58,7 @@ const Footer = () => {
           <p>© {year} Ricky Saarloos. Alle rechten voorbehouden.</p>
           <p>
             Built with <span className="font-medium text-zinc-300">React + Vite</span>
+            <span className="font-medium text-zinc-300">   |  Tailwindcss</span>
           </p>
         </div>
       </div>

@@ -40,7 +40,7 @@ function Home() {
             className="relative overflow-hidden shadow-2xl shadow-zinc-900/30 dark:shadow-black/50"
             style={{
              
-              transform: 'rotate(-1deg)',
+              transform: 'rotate(-0.5deg)',
             }}
           >
             {/* Glow rim */}

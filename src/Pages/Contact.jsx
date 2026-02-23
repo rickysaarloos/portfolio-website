@@ -105,7 +105,7 @@ const Contact = () => {
             <p className="mb-10 max-w-sm text-base font-light leading-8 text-zinc-600 dark:text-zinc-400">
               Werk je aan een website of productidee en zoek je een developer
               die <span className="font-medium text-zinc-900 dark:text-zinc-200">design en techniek</span> combineert?
-              Stuur me een bericht — ik kom snel bij je terug.
+              Stuur me een bericht ik kom snel bij je terug.
             </p>
 
             {/* Contact info rows */}

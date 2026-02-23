@@ -128,7 +128,7 @@ const About = () => {
             className="relative mx-auto h-[440px] w-full max-w-[380px]"
             style={{ animation: 'fade-up 0.7s ease 0.4s both' }}
           >
-            <div className="absolute left-0 top-0 overflow-hidden shadow-2xl shadow-zinc-900/20 dark:shadow-black/40" style={{ transform: 'rotate(2.5deg)' }}>
+            <div className="absolute left-0 top-0 overflow-hidden shadow-2xl shadow-zinc-900/20 dark:shadow-black/40" style={{ transform: 'rotate(1 deg)' }}>
               <div className="absolute -top-2 -left-2 z-10 h-6 w-6 border-t-2 border-l-2 border-zinc-900 dark:border-zinc-200" />
               <div className="absolute inset-0 z-10 ring-1 ring-inset ring-white/10" />
               <img src={profileImages.side} alt="Ricky portrait 2" className="h-60 w-48 object-cover grayscale-[20%]" />
@@ -138,7 +138,7 @@ const About = () => {
               </span>
             </div>
 
-            <div className="absolute bottom-0 right-0 overflow-hidden shadow-2xl shadow-zinc-900/25 dark:shadow-black/50" style={{ transform: 'rotate(-1.5deg)' }}>
+            <div className="absolute bottom-0 right-0 overflow-hidden shadow-2xl shadow-zinc-900/25 dark:shadow-black/50" style={{ transform: 'rotate(-1 deg)' }}>
               <div className="absolute -bottom-2 -right-2 z-10 h-6 w-6 border-b-2 border-r-2 border-zinc-900 dark:border-zinc-200" />
               <div className="absolute inset-0 z-10 ring-1 ring-inset ring-white/10" />
               <img src={profileImages.main} alt="Ricky portrait" className="h-64 w-52 object-cover grayscale-[10%] transition-all duration-500 hover:grayscale-0" />

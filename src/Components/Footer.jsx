@@ -49,6 +49,16 @@ const Footer = () => {
                 GitHub profiel
               </a>
             </li>
+                        <li>
+              <a
+                href="https://www.linkedin.com/in/ricky-saarloos-2672773b3/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:text-zinc-100"
+              >
+                Linkedin profiel
+              </a>
+            </li>
           </ul>
         </section>
       </div>

@@ -87,7 +87,7 @@ const About = () => {
                 fontSize: 'clamp(52px, 6.5vw, 92px)',
                 fontWeight: 300,
                 fontStyle: 'italic',
-                color: 'transparent',
+               
                 WebkitTextStroke: '1.5px currentColor',
               }}
             >

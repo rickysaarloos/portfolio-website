@@ -104,7 +104,7 @@ const projects = [
     category: "Full-stack web app",
     year: "2026",
     stack: ["MongoDB", "Express", "React", "Vite", "Tailwind CSS"],
-    image: `${imageBase}Schermafbeelding 2026-02-11 115125.png`,
+    image: `${imageBase}kleren.png`,
     description:
       "Een full-stack fashion marketplace app gebouwd met de MERN stack.",
     repositoryUrl: "https://github.com/rickysaarloos/mern-stack-FITD-app",

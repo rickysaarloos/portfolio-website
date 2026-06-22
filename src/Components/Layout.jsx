@@ -1,18 +1,21 @@
+import { GithubLogoIcon } from '@phosphor-icons/react'
 import Footer from './Footer'
-
-const githubLogo = `${import.meta.env.BASE_URL}images/pngimg.com - github_PNG40.png`
 
 const Layout = ({ children }) => {
   return (
-    <div className="flex min-h-screen flex-col bg-zinc-100 transition-colors dark:bg-zinc-950">
+    <div className="flex min-h-screen flex-col bg-zinc-100 text-zinc-900 transition-colors duration-300 dark:bg-zinc-950 dark:text-zinc-100">
       <a
         href="https://github.com/rickysaarloos"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed right-6 top-6 z-50 rounded-full bg-white/80 p-2 shadow-md backdrop-blur transition hover:scale-105 hover:bg-white dark:bg-zinc-900/80 dark:hover:bg-zinc-900"
         aria-label="GitHub profiel"
+        className="group fixed right-6 top-6 z-50 flex size-10 items-center justify-center border border-zinc-300 bg-zinc-100/70 text-zinc-700 outline-none backdrop-blur transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[1px] hover:translate-x-[1px] hover:border-zinc-900 hover:bg-zinc-900 hover:text-white focus-visible:ring-2 focus-visible:ring-zinc-900 dark:border-zinc-700 dark:bg-zinc-950/70 dark:text-zinc-300 dark:hover:border-zinc-100 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 dark:focus-visible:ring-zinc-100"
       >
-        <img src={githubLogo} alt="GitHub" className="h-9 w-9 rounded-full" />
+        <GithubLogoIcon
+          size={18}
+          weight="fill"
+          className="transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
+        />
       </a>
       <main className="flex-1">{children}</main>
       <Footer />

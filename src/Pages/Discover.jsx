@@ -1,13 +1,21 @@
 import { useState, useMemo } from 'react'
+import { motion, useReducedMotion } from 'motion/react'
+import { MagnifyingGlassIcon, XIcon } from '@phosphor-icons/react'
 import Layout from '../Components/Layout'
 import ProjectCard from '../Components/ProjectCard'
 import projects from '../Components/Projects'
+import { Input } from '@/Components/ui/input'
+import { Button } from '@/Components/ui/button'
 
 const allFilter = 'Alles'
+const EASE = [0.16, 1, 0.3, 1]
+const MotionDiv = motion.div
+const MotionSpan = motion.span
 
 function Discover() {
   const [searchTerm, setSearchTerm] = useState('')
   const [activeFilter, setActiveFilter] = useState(allFilter)
+  const reduce = useReducedMotion()
 
   const filterOptions = useMemo(() => {
     return [allFilter, ...new Set(projects.map((p) => p.category))]
@@ -26,11 +34,16 @@ function Discover() {
     })
   }, [activeFilter, searchTerm])
 
+  const hasActiveFilters = searchTerm || activeFilter !== allFilter
+  const indicatorTransition = reduce
+    ? { duration: 0 }
+    : { type: 'spring', stiffness: 400, damping: 35 }
+
   return (
     <Layout>
       {/* Background atmosphere */}
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-40 -right-40 h-[700px] w-[700px] rounded-full bg-zinc-400/5 blur-[120px] dark:bg-white/4" />
+        <div className="absolute -top-40 -right-40 h-[700px] w-[700px] rounded-full bg-zinc-400/5 blur-[120px] dark:bg-white/[0.04]" />
         <div
           className="absolute inset-0 opacity-[0.025] dark:opacity-[0.035]"
           style={{
@@ -41,116 +54,151 @@ function Discover() {
         />
       </div>
 
-      <main className="mx-auto w-full max-w-6xl px-6 py-20">
+      <main className="mx-auto w-full max-w-6xl px-6 py-20 md:py-28">
 
         {/* Header */}
-        <div className="mb-14" style={{ animation: 'fade-up 0.7s ease 0.2s both' }}>
+        <MotionDiv
+          className="mb-16"
+          initial={reduce ? false : { opacity: 0, y: 24 }}
+          animate={reduce ? undefined : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: EASE, delay: 0.1 }}
+        >
           <div className="mb-6 flex items-center gap-3">
             <div className="h-px w-8 bg-zinc-900 dark:bg-zinc-100" />
-            <span
-              className="text-[11px] uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400"
-              style={{ fontFamily: "'DM Mono', monospace" }}
-            >
+            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">
               Discover
             </span>
           </div>
 
           <h1
-            className="mb-2 leading-[0.9] tracking-tight text-zinc-950 dark:text-zinc-50"
-            style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: 'clamp(38px, 5vw, 68px)',
-              fontWeight: 600,
-            }}
+            className="mb-2 font-display font-semibold leading-[0.92] tracking-tight text-balance text-zinc-950 dark:text-zinc-50"
+            style={{ fontSize: 'clamp(38px, 5vw, 68px)' }}
           >
             Check out my work // zie mijn werk
-            
           </h1>
+        </MotionDiv>
 
-
-          {/* Search + filters row */}
-          <div className="flex flex-col gap-4 border-t border-zinc-200 pt-8 dark:border-zinc-800 md:flex-row md:items-end md:justify-between">
-            {/* Search */}
-            <div className="flex flex-col gap-2 md:w-72">
-              <span
-                className="text-[10px] uppercase tracking-[0.15em] text-zinc-500 dark:text-zinc-500"
-                style={{ fontFamily: "'DM Mono', monospace" }}
-              >
-                Zoek projecten
-              </span>
-              <input
+        {/* Search + filters row */}
+        <MotionDiv
+          className="flex flex-col gap-4 border-t border-zinc-200 pt-8 dark:border-zinc-800 md:flex-row md:items-end md:justify-between"
+          initial={reduce ? false : { opacity: 0, y: 24 }}
+          animate={reduce ? undefined : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: EASE, delay: 0.25 }}
+        >
+          {/* Search */}
+          <div className="flex flex-col gap-2 md:w-72">
+            <label
+              htmlFor="project-search"
+              className="font-mono text-[10px] uppercase tracking-[0.15em] text-zinc-500 dark:text-zinc-500"
+            >
+              Zoek projecten
+            </label>
+            <div className="relative">
+              <MagnifyingGlassIcon
+                size={15}
+                weight="bold"
+                className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400 dark:text-zinc-600"
+              />
+              <Input
+                id="project-search"
                 type="text"
                 placeholder="Bijv. React, game, PHP..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="border border-zinc-200 bg-transparent px-4 py-2.5 text-sm text-zinc-900 outline-none transition-colors placeholder:text-zinc-400 focus:border-zinc-500 dark:border-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-700 dark:focus:border-zinc-500"
-                style={{ fontFamily: "'DM Mono', monospace", fontSize: '12px' }}
+                className="h-11 rounded-none border-zinc-200 bg-transparent pl-9 font-mono text-xs text-zinc-900 shadow-none transition-colors placeholder:text-zinc-400 focus-visible:border-zinc-500 focus-visible:ring-0 dark:border-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-600 dark:focus-visible:border-zinc-500"
               />
             </div>
+          </div>
 
-            {/* Filter chips */}
-            <div className="flex flex-wrap gap-2">
-              {filterOptions.map((option) => {
-                const isActive = option === activeFilter
-                return (
-                  <button
-                    key={option}
-                    type="button"
-                    onClick={() => setActiveFilter(option)}
-                    className={`border px-4 py-2 text-[11px] uppercase tracking-[0.1em] transition-colors duration-200 ${
+          {/* Filter chips with a sliding active indicator */}
+          <div className="flex flex-wrap gap-2">
+            {filterOptions.map((option) => {
+              const isActive = option === activeFilter
+              return (
+                <button
+                  key={option}
+                  type="button"
+                  aria-pressed={isActive}
+                  onClick={() => setActiveFilter(option)}
+                  className="relative border border-zinc-200 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.1em] outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-zinc-900 dark:border-zinc-800 dark:focus-visible:ring-zinc-100 data-[active=false]:text-zinc-600 data-[active=false]:hover:border-zinc-500 data-[active=false]:hover:text-zinc-900 dark:data-[active=false]:text-zinc-500 dark:data-[active=false]:hover:border-zinc-500 dark:data-[active=false]:hover:text-zinc-200"
+                  data-active={isActive}
+                >
+                  {isActive && (
+                    <MotionSpan
+                      layoutId="filter-active"
+                      transition={indicatorTransition}
+                      className="absolute inset-0 -z-10 bg-zinc-900 dark:bg-zinc-100"
+                    />
+                  )}
+                  <span
+                    className={
                       isActive
-                        ? 'border-zinc-900 bg-zinc-900 text-zinc-100 dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900'
-                        : 'border-zinc-200 bg-transparent text-zinc-600 hover:border-zinc-500 hover:text-zinc-900 dark:border-zinc-800 dark:text-zinc-500 dark:hover:border-zinc-500 dark:hover:text-zinc-200'
-                    }`}
-                    style={{ fontFamily: "'DM Mono', monospace" }}
+                        ? 'relative text-zinc-100 dark:text-zinc-900'
+                        : 'relative'
+                    }
                   >
                     {option}
-                  </button>
-                )
-              })}
-            </div>
+                  </span>
+                </button>
+              )
+            })}
           </div>
+        </MotionDiv>
 
-          {/* Results count + reset */}
-          <div className="mt-4 flex items-center justify-between">
-            <p
-              className="text-[11px] uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-500"
-              style={{ fontFamily: "'DM Mono', monospace" }}
+        {/* Results count + reset */}
+        <MotionDiv
+          className="mb-12 mt-4 flex items-center justify-between"
+          initial={reduce ? false : { opacity: 0 }}
+          animate={reduce ? undefined : { opacity: 1 }}
+          transition={{ duration: 0.6, ease: EASE, delay: 0.35 }}
+        >
+          <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-500">
+            <span className="tabular-nums text-zinc-900 dark:text-zinc-100">
+              {filteredProjects.length}
+            </span>{' '}
+            project(en) gevonden
+          </p>
+          {hasActiveFilters && (
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => {
+                setSearchTerm('')
+                setActiveFilter(allFilter)
+              }}
+              className="h-auto gap-1.5 rounded-none border-zinc-200 bg-transparent px-3 py-1.5 font-mono text-[11px] font-normal uppercase tracking-[0.1em] text-zinc-500 shadow-none hover:border-zinc-500 hover:bg-transparent hover:text-zinc-900 dark:border-zinc-800 dark:text-zinc-500 dark:hover:border-zinc-500 dark:hover:text-zinc-200"
             >
-              <span className="text-zinc-900 dark:text-zinc-100">{filteredProjects.length}</span> project(en) gevonden
-            </p>
-            {(searchTerm || activeFilter !== allFilter) && (
-              <button
-                type="button"
-                onClick={() => { setSearchTerm(''); setActiveFilter(allFilter) }}
-                className="border border-zinc-200 px-3 py-1.5 text-[11px] uppercase tracking-[0.1em] text-zinc-500 transition-colors hover:border-zinc-500 hover:text-zinc-900 dark:border-zinc-800 dark:text-zinc-500 dark:hover:border-zinc-500 dark:hover:text-zinc-200"
-                style={{ fontFamily: "'DM Mono', monospace" }}
-              >
-                Reset filters ×
-              </button>
-            )}
-          </div>
-        </div>
+              Reset filters
+              <XIcon size={12} weight="bold" />
+            </Button>
+          )}
+        </MotionDiv>
 
         {/* Project grid */}
-        <section
-          className="grid grid-cols-1 gap-px border border-zinc-200 bg-zinc-200 dark:border-zinc-800 dark:bg-zinc-800 md:grid-cols-2 lg:grid-cols-3"
-          style={{ animation: 'fade-up 0.7s ease 0.4s both' }}
-        >
+        <section className="grid grid-cols-1 gap-px border border-zinc-200 bg-zinc-200 dark:border-zinc-800 dark:bg-zinc-800 md:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.length > 0 ? (
-            filteredProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+            filteredProjects.map((project, i) => (
+              <ProjectCard key={project.id} project={project} index={i} />
             ))
           ) : (
-            <article
-              className="col-span-full bg-white px-8 py-16 text-center dark:bg-zinc-950"
-            >
-              <p
-                className="text-[11px] uppercase tracking-[0.15em] text-zinc-400 dark:text-zinc-600"
-                style={{ fontFamily: "'DM Mono', monospace" }}
-              >
+            <article className="col-span-full flex flex-col items-center gap-4 bg-white px-8 py-20 text-center dark:bg-zinc-950">
+              <span className="flex size-12 items-center justify-center border border-zinc-200 text-zinc-400 dark:border-zinc-800 dark:text-zinc-600">
+                <MagnifyingGlassIcon size={20} weight="light" />
+              </span>
+              <p className="font-mono text-[11px] uppercase tracking-[0.15em] text-zinc-500 dark:text-zinc-500">
                 Geen projecten gevonden met deze filters.
               </p>
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => {
+                  setSearchTerm('')
+                  setActiveFilter(allFilter)
+                }}
+                className="mt-1 h-auto rounded-none border-zinc-300 bg-transparent px-4 py-2 font-mono text-[11px] font-normal uppercase tracking-[0.1em] text-zinc-700 shadow-none hover:border-zinc-900 hover:bg-transparent hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-100 dark:hover:text-zinc-100"
+              >
+                Toon alle projecten
+              </Button>
             </article>
           )}
         </section>
